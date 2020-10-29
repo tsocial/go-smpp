@@ -7,7 +7,6 @@ linters:
     - errcheck
     - errorlint
     - exhaustive
-    - exhaustivestruct
     - gochecknoinits
     - goconst
     - gocritic
