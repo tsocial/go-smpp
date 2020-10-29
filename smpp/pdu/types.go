@@ -68,7 +68,8 @@ func newBind(hdr *Header) *codec {
 			pdufield.AddrTON,
 			pdufield.AddrNPI,
 			pdufield.AddressRange,
-		}}
+		},
+	}
 }
 
 // NewBindReceiver creates a new Bind PDU.
@@ -201,7 +202,7 @@ func NewSubmitSM(fields pdutlv.Fields) Body {
 	b := newSubmitSM(&Header{ID: SubmitSMID})
 	b.init()
 	for tag, value := range fields {
-		b.t.Set(tag, value)
+		_ = b.t.Set(tag, value)
 	}
 	return b
 }
@@ -258,7 +259,7 @@ func NewSubmitMulti(fields pdutlv.Fields) Body {
 	b := newSubmitMulti(&Header{ID: SubmitMultiID})
 	b.init()
 	for tag, value := range fields {
-		b.t.Set(tag, value)
+		_ = b.t.Set(tag, value)
 	}
 	return b
 }
